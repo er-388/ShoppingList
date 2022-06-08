@@ -14,9 +14,9 @@ namespace Shopping_List
         {
             string polku = @"C:\Users\Erkki\source\repos\Shopping List\Shopping List\data.txt";
 
-            //List<string> tuotteet = new List<string>();
+            
             string[] tuotteet;
-            if (File.Exists(polku))
+            if (File.Exists(polku)) //jos tiedosto löytyy, lisätään rivit string arrayhyn ja tulostetaan tuotteet
             {
                 tuotteet = File.ReadAllLines(polku);
                 Console.WriteLine("Aiemmin lisätyt tuotteet: ");

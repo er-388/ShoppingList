@@ -2,3 +2,4 @@ auto
 peruna
 tomaatti
 auto
+porkkana
