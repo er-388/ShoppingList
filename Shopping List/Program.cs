@@ -15,23 +15,26 @@ namespace Shopping_List
             string polku = @"C:\Users\Erkki\source\repos\Shopping List\Shopping List\text.txt";
 
             //List<string> tuotteet = new List<string>();
+            string[] tuotteet;
+            tuotteet = File.ReadAllLines(polku);
+            Console.WriteLine("Aiemmin lisätyt tuotteet: ");
+            foreach (string tuote in tuotteet)
+            {
+                Console.WriteLine(tuote);
+            }
+            Console.WriteLine();
 
             Console.Write("Kirjoita tuote lisättäväksi ostoslistaan: ");
             string syote = Console.ReadLine();
 
-            if (File.Exists(polku))
+            if (File.Exists(polku) && !String.IsNullOrWhiteSpace(syote))
             {
-                File.WriteAllText(polku, syote + Environment.NewLine);
+                File.AppendAllText(polku, syote + Environment.NewLine);
             }
             else
             {
                 Console.WriteLine("Tiedostoa ei ole olemassa!");
             }
-            
-
-
-
-
         }
     }
 }
