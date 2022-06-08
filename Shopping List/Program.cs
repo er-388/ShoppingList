@@ -12,29 +12,32 @@ namespace Shopping_List
     {
         static void Main(string[] args)
         {
-            string polku = @"C:\Users\Erkki\source\repos\Shopping List\Shopping List\text.txt";
+            string polku = @"C:\Users\Erkki\source\repos\Shopping List\Shopping List\data.txt";
 
             //List<string> tuotteet = new List<string>();
             string[] tuotteet;
-            tuotteet = File.ReadAllLines(polku);
-            Console.WriteLine("Aiemmin lisätyt tuotteet: ");
-            foreach (string tuote in tuotteet)
+            if (File.Exists(polku))
             {
-                Console.WriteLine(tuote);
+                tuotteet = File.ReadAllLines(polku);
+                Console.WriteLine("Aiemmin lisätyt tuotteet: ");
+                foreach (string tuote in tuotteet)
+                {
+                    Console.WriteLine(tuote);
+                }
+
+                Console.WriteLine();
             }
-            Console.WriteLine();
 
             Console.Write("Kirjoita tuote lisättäväksi ostoslistaan: ");
             string syote = Console.ReadLine();
 
-            if (File.Exists(polku) && !String.IsNullOrWhiteSpace(syote))
+            if (!String.IsNullOrWhiteSpace(syote))
             {
                 File.AppendAllText(polku, syote + Environment.NewLine);
+                Console.WriteLine("Lisäsit tuotteen " + syote);
             }
-            else
-            {
-                Console.WriteLine("Tiedostoa ei ole olemassa!");
-            }
+            
         }
     }
 }
+
