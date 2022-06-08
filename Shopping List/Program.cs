@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-/*Asks user one shoppping item
-* Saves input to a file
-*  Hint: append
-*  
-*  Bonus: On startup, print all items from the file*/
+
 namespace Shopping_List
 {
     class Program
