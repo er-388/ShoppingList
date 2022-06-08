@@ -32,6 +32,7 @@ namespace Shopping_List
                 File.AppendAllText(polku, syote + Environment.NewLine);
                 Console.WriteLine("Lisäsit tuotteen " + syote);
             }
+            Console.WriteLine("Testituloste");//mergen testaamista varten
             
         }
     }
